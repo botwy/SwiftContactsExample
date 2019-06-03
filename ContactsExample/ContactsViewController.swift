@@ -45,18 +45,20 @@ class ContactsViewController: UIViewController, UITableViewDelegate {
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    guard MFMailComposeViewController.canSendMail() else { return }
+//    guard MFMailComposeViewController.canSendMail() else { return }
     let application = UIApplication.shared
-    let composeVC = MFMailComposeViewController()
-    composeVC.setToRecipients(["botwy@mail.ru"])
-    application.keyWindow?.rootViewController?.present(composeVC, animated: true, completion: nil)
+//    let composeVC = MFMailComposeViewController()
+//    composeVC.setToRecipients(["botwy@mail.ru"])
+//    application.keyWindow?.rootViewController?.present(composeVC, animated: true, completion: nil)
     //self.present(composeVC, animated: true, completion: nil)
-//    guard let url = URL(string: "mailto:botwy@mail.ru"), application.canOpenURL(url) else {
-//      return
-//
-//    }
-//    print("did select")
-//    application.open(url, options: [:], completionHandler: nil)
+    
+    //guard let url = URL(string: "tg://msg?to=79097776655"),application.canOpenURL(url)
+    guard let url = URL(string: "https://api.whatsapp.com/send?phone=79097776655") else {
+      return
+
+    }
+    print("did select")
+    application.open(url, options: [:], completionHandler: nil)
   }
     /*
     // MARK: - Navigation
